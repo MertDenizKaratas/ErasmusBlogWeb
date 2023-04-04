@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.Writer
+
+@{
+ 
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/css2/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+@using (Html.BeginForm("Add", "Writer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Writer Password")
+        @Html.TextBoxFor(x=>x.WritePassword)
+    </div>
+    <div class="form-group">
+        @Html.Label("Writer Name")
+        @Html.TextBoxFor(x=>x.WriterName)
+    </div>
+    <div class="form-group">
+        @Html.Label("Writer Surname")
+        @Html.TextBoxFor(x=>x.WriterSurname)
+    </div>
+    <div class="form-group">
+        @Html.Label("Writer Image")
+        @Html.TextBoxFor(x=>x.WriterImage)
+    </div>
+    <div class="form-group">
+        @Html.Label("Writer Mail")
+        @Html.TextBoxFor(x=>x.WriterMail)
+    </div>
+    <div class="form-group">
+        @Html.Label("Writer Surname")
+        @Html.TextBoxFor(x=>x.WriterUsername)
+    </div>
+
+    <button>Save</button>
+
+
+}

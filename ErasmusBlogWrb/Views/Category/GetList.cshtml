@@ -1,0 +1,31 @@
+﻿@model List<EntityLayer.Concrete.Category>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/css2/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryId</td>
+            <td>@item.CategoryName</td>
+            <td>@item.CategoryDescription</td>
+            <td>@item.CategoryStatus</td>
+            <td><a href="/Category/Delete/@item.CategoryId" class="btn btn-outline-primary">Delete</a></td>
+            <td><a href="/Category/Update/@item.CategoryId" class="btn btn-outline-secondary">Update</a></td>
+        </tr>
+    }
+</table>
+
+<a href ="/Category/Add" class="btn btn-success">Add Category</a>

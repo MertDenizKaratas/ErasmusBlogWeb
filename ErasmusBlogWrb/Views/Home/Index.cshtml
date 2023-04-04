@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.ApplicationUser
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/css2/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>@Model.Name</th>
+    </tr>
+
+</table>
+
+<a href="/Category/GetList" class="btn btn-outline-secondary">Category List</a>
+<a href="/Category/Add" class="btn btn-outline-success">New Category</a>

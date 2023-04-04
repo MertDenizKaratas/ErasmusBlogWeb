@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Header
+
+@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/css2/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+@using (Html.BeginForm("Add", "Header", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Header Name")
+        @Html.TextBoxFor(x=>x.HeaderName)
+    </div>
+    <div class="form-group">
+        @Html.Label("Header Category")
+        @Html.DropDownListFor(x=>x.CategoryId, (List<SelectListItem>)ViewBag.slm)
+    </div>
+    <div class="form-group">
+        @Html.Label("Header Writer")
+        @Html.DropDownListFor(x=>x.WriterId, (List<SelectListItem>)ViewBag.slk)
+    </div>
+
+
+    <button>Save</button>
+
+
+}

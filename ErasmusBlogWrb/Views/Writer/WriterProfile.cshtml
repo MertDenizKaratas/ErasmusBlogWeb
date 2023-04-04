@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Writer
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/css2/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Mail</th>
+        <th>Username</th>
+        <th>Image</th>
+        
+    </tr>
+    <tr>
+        <th>@Model.WriterName</th>
+        <th>@Model.WriterSurname</th>
+        <th>@Model.WriterMail</th>
+        <th>@Model.WriterUsername</th>
+        <th>@Model.WriterImage</th>
+    </tr>
+</table>
+
+<a href="/Category/GetList" class="btn btn-outline-secondary">Category List</a>
+<a href="/Category/Add" class="btn btn-outline-success">New Category</a>

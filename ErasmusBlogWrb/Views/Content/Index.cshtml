@@ -1,0 +1,31 @@
+﻿@model List<EntityLayer.Concrete.Content>
+@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/css2/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Value</th>
+        <th>Header Name</th>
+        <th>Writer Name</th>
+        <th>Date</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ContentValue</td>
+            <td>@item.Header.HeaderName</td>
+            <td>@item.Writer.WriterName</td>
+            <td>@item.ContentDate</td>
+            <td><a href="/Content/Delete/@item.ContentId" class="btn btn-light">Delete</a></td>
+            <td><a href="/Content/Update/@item.ContentId" class="btn btn-outline-secondary">Update</a></td>
+        </tr>
+
+    }
+</table>
+

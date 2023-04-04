@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.Content
+
+@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/css2/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+@using (Html.BeginForm("Add", "Content", FormMethod.Post))
+{
+    <input type="hidden" name="HeaderId"  value="@ViewBag.d" />
+    <br />
+    <div class="form-group">
+        @Html.Label("Content Value")
+        @Html.TextBoxFor(x=>x.ContentValue)
+    </div>
+
+
+    <button>Save</button>
+
+
+}

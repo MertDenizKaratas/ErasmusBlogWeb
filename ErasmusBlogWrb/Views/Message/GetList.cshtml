@@ -1,0 +1,31 @@
+﻿@model List<EntityLayer.Concrete.Message>
+@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/css2/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Message Subject</th>
+        <th>Message Content</th>
+        <th>Message Date</th>
+        <th>Sender</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+            <tr>
+                <td>@item.MessageSubject</td>
+                <td>@item.MessageContent</td>
+                <td>@item.MessageDate</td>
+                <td>@item.SenderMail</td>
+                <td><a href="/Content/Delete/@item.MessageId" class="btn btn-light">Delete</a></td>
+                <td><a href="/Content/Update/@item.MessageId" class="btn btn-outline-secondary">Update</a></td>
+            </tr>
+
+    }
+</table>
+
